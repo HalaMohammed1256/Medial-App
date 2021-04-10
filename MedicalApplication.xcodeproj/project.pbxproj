@@ -56,15 +56,55 @@
 		2B0817FE2621BC4A00DC2C65 /* MedicalApplication */ = {
 			isa = PBXGroup;
 			children = (
-				2B0817FF2621BC4A00DC2C65 /* AppDelegate.swift */,
-				2B0818012621BC4A00DC2C65 /* SceneDelegate.swift */,
-				2B0818032621BC4A00DC2C65 /* ViewController.swift */,
-				2B0818052621BC4A00DC2C65 /* Main.storyboard */,
-				2B0818082621BC4B00DC2C65 /* Assets.xcassets */,
-				2B08180A2621BC4B00DC2C65 /* LaunchScreen.storyboard */,
+				2B0818182621BCAD00DC2C65 /* Delegate */,
+				2B0818172621BC9C00DC2C65 /* Assets */,
+				2B0818162621BC7300DC2C65 /* Model */,
+				2B0818152621BC6400DC2C65 /* Presenter */,
+				2B0818142621BC5B00DC2C65 /* View */,
 				2B08180D2621BC4B00DC2C65 /* Info.plist */,
 			);
 			path = MedicalApplication;
+			sourceTree = "<group>";
+		};
+		2B0818142621BC5B00DC2C65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B0818052621BC4A00DC2C65 /* Main.storyboard */,
+				2B08180A2621BC4B00DC2C65 /* LaunchScreen.storyboard */,
+				2B0818032621BC4A00DC2C65 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B0818152621BC6400DC2C65 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2B0818162621BC7300DC2C65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B0818172621BC9C00DC2C65 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2B0818082621BC4B00DC2C65 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2B0818182621BCAD00DC2C65 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2B0817FF2621BC4A00DC2C65 /* AppDelegate.swift */,
+				2B0818012621BC4A00DC2C65 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
