@@ -17,4 +17,13 @@ extension UITextField{
         layer.backgroundColor = MainColors.instance.secondaryColor.cgColor
         self.layer.addSublayer(layer)
     }
+    
+    
+}
+
+
+extension String{
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+    }
 }

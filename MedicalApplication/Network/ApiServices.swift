@@ -15,8 +15,8 @@ class ApiServices{
     
     func getResponses<T: Decodable>(url: String, id: String, completion: @escaping(T?, Error?)-> Void){
         
-        
-        Alamofire.request(url, method: .get, encoding: URLEncoding.default).responseJSON{(response) in
+        let parameters: Parameters = ["id": Int(id) ?? ""]
+        Alamofire.request(url, method: .get,parameters: parameters, encoding: URLEncoding.default).responseJSON{(response) in
             
             switch response.result{
                 case .success( _):
@@ -29,6 +29,7 @@ class ApiServices{
                         let decoder = JSONDecoder()
                         let data = try decoder.decode(T.self, from: responseData)
                         completion(data,nil)
+                        
                         
                     }catch{
                         completion(nil,error)

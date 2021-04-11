@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataModel : Codable {
+struct PharmacyPatientData : Codable {
     let status_code : Int?
     let message : String?
     let details : Details?

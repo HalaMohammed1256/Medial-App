@@ -13,15 +13,20 @@
 		2B0818092621BC4B00DC2C65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0818082621BC4B00DC2C65 /* Assets.xcassets */; };
 		2B08180C2621BC4B00DC2C65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B08180A2621BC4B00DC2C65 /* LaunchScreen.storyboard */; };
 		2B08181D2621C48800DC2C65 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08181C2621C48800DC2C65 /* ApiServices.swift */; };
+		2B51D4BA262387AD00302544 /* PatientRoshtaDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51D4B9262387AD00302544 /* PatientRoshtaDetailsViewController.swift */; };
+		2B51D4BE2623883E00302544 /* PatientRoshtaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51D4BD2623883E00302544 /* PatientRoshtaPresenter.swift */; };
+		2B51D4C12623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51D4C02623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift */; };
+		2B92DAF5262365A500AC1A91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B92DAF7262365A500AC1A91 /* Localizable.strings */; };
 		2B9D9DF32621CAFA00272CEA /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DF22621CAFA00272CEA /* Details.swift */; };
 		2B9D9DF62621CB5600272CEA /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DF52621CB5600272CEA /* Products.swift */; };
 		2B9D9DF92621CB7B00272CEA /* Rosheta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DF82621CB7B00272CEA /* Rosheta.swift */; };
-		2B9D9DFC2621CC6400272CEA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DFB2621CC6400272CEA /* DataModel.swift */; };
-		2B9D9DFF2621CD6500272CEA /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DFE2621CD6500272CEA /* VerificationViewController.swift */; };
+		2B9D9DFC2621CC6400272CEA /* PharmacyPatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DFB2621CC6400272CEA /* PharmacyPatientData.swift */; };
+		2B9D9DFF2621CD6500272CEA /* RoshtaCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9DFE2621CD6500272CEA /* RoshtaCodeVerificationViewController.swift */; };
 		2B9D9E022621CD8200272CEA /* VerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9E012621CD8200272CEA /* VerificationPresenter.swift */; };
 		2B9D9E062621D0F200272CEA /* ApiURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9E052621D0F200272CEA /* ApiURLs.swift */; };
 		2B9D9E0B2621D64600272CEA /* MainColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9E0A2621D64600272CEA /* MainColors.swift */; };
 		2B9D9E0E2621EEB200272CEA /* UIElementExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9E0D2621EEB200272CEA /* UIElementExtentions.swift */; };
+		2BCABAFA26230DE100191747 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCABAF926230DE100191747 /* ActivityIndicator.swift */; };
 		96750F6174F7E3632B868ADF /* Pods_MedicalApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB3E6FCC5B24FC54B500A78 /* Pods_MedicalApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,15 +40,22 @@
 		2B08180B2621BC4B00DC2C65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B08180D2621BC4B00DC2C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B08181C2621C48800DC2C65 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		2B51D4B9262387AD00302544 /* PatientRoshtaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientRoshtaDetailsViewController.swift; sourceTree = "<group>"; };
+		2B51D4BD2623883E00302544 /* PatientRoshtaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientRoshtaPresenter.swift; sourceTree = "<group>"; };
+		2B51D4C02623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoshtaCodeVerificationViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		2B92DAF6262365A500AC1A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2B92DAF9262365C800AC1A91 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Main.strings"; sourceTree = "<group>"; };
+		2B92DAFA262365C800AC1A91 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2B9D9DF22621CAFA00272CEA /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		2B9D9DF52621CB5600272CEA /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		2B9D9DF82621CB7B00272CEA /* Rosheta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rosheta.swift; sourceTree = "<group>"; };
-		2B9D9DFB2621CC6400272CEA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		2B9D9DFE2621CD6500272CEA /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		2B9D9DFB2621CC6400272CEA /* PharmacyPatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyPatientData.swift; sourceTree = "<group>"; };
+		2B9D9DFE2621CD6500272CEA /* RoshtaCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshtaCodeVerificationViewController.swift; sourceTree = "<group>"; };
 		2B9D9E012621CD8200272CEA /* VerificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
 		2B9D9E052621D0F200272CEA /* ApiURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURLs.swift; sourceTree = "<group>"; };
 		2B9D9E0A2621D64600272CEA /* MainColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColors.swift; sourceTree = "<group>"; };
 		2B9D9E0D2621EEB200272CEA /* UIElementExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementExtentions.swift; sourceTree = "<group>"; };
+		2BCABAF926230DE100191747 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		95F3379D552450075AA016C4 /* Pods-MedicalApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalApplication.release.xcconfig"; path = "Target Support Files/Pods-MedicalApplication/Pods-MedicalApplication.release.xcconfig"; sourceTree = "<group>"; };
 		BB5484FDAA82C7C9E7606896 /* Pods-MedicalApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalApplication.debug.xcconfig"; path = "Target Support Files/Pods-MedicalApplication/Pods-MedicalApplication.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +109,7 @@
 				2B08181B2621C45E00DC2C65 /* Network */,
 				2B0818162621BC7300DC2C65 /* Model */,
 				2B0818152621BC6400DC2C65 /* Presenter */,
+				2B92DAF02623656300AC1A91 /* Localization */,
 				2B0818142621BC5B00DC2C65 /* View */,
 				2B08180D2621BC4B00DC2C65 /* Info.plist */,
 			);
@@ -109,6 +122,7 @@
 				2B0818052621BC4A00DC2C65 /* Main.storyboard */,
 				2B08180A2621BC4B00DC2C65 /* LaunchScreen.storyboard */,
 				2B0818192621C21C00DC2C65 /* Verification */,
+				2BCB1B3E26238161003E16E1 /* PatientRoshtaDetails */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				2B9D9E012621CD8200272CEA /* VerificationPresenter.swift */,
+				2B51D4BD2623883E00302544 /* PatientRoshtaPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -127,7 +142,7 @@
 				2B9D9DF22621CAFA00272CEA /* Details.swift */,
 				2B9D9DF52621CB5600272CEA /* Products.swift */,
 				2B9D9DF82621CB7B00272CEA /* Rosheta.swift */,
-				2B9D9DFB2621CC6400272CEA /* DataModel.swift */,
+				2B9D9DFB2621CC6400272CEA /* PharmacyPatientData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,7 +167,8 @@
 		2B0818192621C21C00DC2C65 /* Verification */ = {
 			isa = PBXGroup;
 			children = (
-				2B9D9DFE2621CD6500272CEA /* VerificationViewController.swift */,
+				2B9D9DFE2621CD6500272CEA /* RoshtaCodeVerificationViewController.swift */,
+				2B51D4C02623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -166,10 +182,19 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		2B92DAF02623656300AC1A91 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				2B92DAF7262365A500AC1A91 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		2B9D9E082621D5B900272CEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				2B9D9E0D2621EEB200272CEA /* UIElementExtentions.swift */,
+				2BCABAF926230DE100191747 /* ActivityIndicator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -180,6 +205,14 @@
 				2B9D9E0A2621D64600272CEA /* MainColors.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		2BCB1B3E26238161003E16E1 /* PatientRoshtaDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2B51D4B9262387AD00302544 /* PatientRoshtaDetailsViewController.swift */,
+			);
+			path = PatientRoshtaDetails;
 			sourceTree = "<group>";
 		};
 		447CAD1967F9BBB02639B073 /* Frameworks */ = {
@@ -233,6 +266,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"ar-EG",
 			);
 			mainGroup = 2B0817F32621BC4A00DC2C65;
 			productRefGroup = 2B0817FD2621BC4A00DC2C65 /* Products */;
@@ -250,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B08180C2621BC4B00DC2C65 /* LaunchScreen.storyboard in Resources */,
+				2B92DAF5262365A500AC1A91 /* Localizable.strings in Resources */,
 				2B0818092621BC4B00DC2C65 /* Assets.xcassets in Resources */,
 				2B0818072621BC4A00DC2C65 /* Main.storyboard in Resources */,
 			);
@@ -304,10 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B9D9DFC2621CC6400272CEA /* DataModel.swift in Sources */,
+				2B9D9DFC2621CC6400272CEA /* PharmacyPatientData.swift in Sources */,
 				2B9D9E0E2621EEB200272CEA /* UIElementExtentions.swift in Sources */,
 				2B08181D2621C48800DC2C65 /* ApiServices.swift in Sources */,
-				2B9D9DFF2621CD6500272CEA /* VerificationViewController.swift in Sources */,
+				2B9D9DFF2621CD6500272CEA /* RoshtaCodeVerificationViewController.swift in Sources */,
+				2BCABAFA26230DE100191747 /* ActivityIndicator.swift in Sources */,
+				2B51D4C12623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift in Sources */,
+				2B51D4BE2623883E00302544 /* PatientRoshtaPresenter.swift in Sources */,
 				2B9D9E022621CD8200272CEA /* VerificationPresenter.swift in Sources */,
 				2B0818002621BC4A00DC2C65 /* AppDelegate.swift in Sources */,
 				2B9D9DF92621CB7B00272CEA /* Rosheta.swift in Sources */,
@@ -316,6 +354,7 @@
 				2B9D9E0B2621D64600272CEA /* MainColors.swift in Sources */,
 				2B9D9DF32621CAFA00272CEA /* Details.swift in Sources */,
 				2B0818022621BC4A00DC2C65 /* SceneDelegate.swift in Sources */,
+				2B51D4BA262387AD00302544 /* PatientRoshtaDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +365,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B0818062621BC4A00DC2C65 /* Base */,
+				2B92DAF9262365C800AC1A91 /* ar-EG */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -338,6 +378,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		2B92DAF7262365A500AC1A91 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B92DAF6262365A500AC1A91 /* en */,
+				2B92DAFA262365C800AC1A91 /* ar-EG */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -345,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -406,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

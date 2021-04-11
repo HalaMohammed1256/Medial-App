@@ -8,5 +8,8 @@ target 'MedicalApplication' do
   # Pods for MedicalApplication
   
   pod 'Alamofire', '~> 4.9.1'
+  pod 'IQKeyboardManagerSwift'
+  pod 'NVActivityIndicatorView'
+  
 
 end
