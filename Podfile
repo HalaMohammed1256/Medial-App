@@ -10,6 +10,7 @@ target 'MedicalApplication' do
   pod 'Alamofire', '~> 4.9.1'
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'
+  pod 'SDWebImage', '~> 5.0'
   
 
 end

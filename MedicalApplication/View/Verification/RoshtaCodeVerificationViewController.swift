@@ -25,16 +25,17 @@ class RoshtaCodeVerificationViewController: UIViewController{
     
     
     // outlets
+    @IBOutlet weak var patientRoshtaTableView: UITableView!{
+        didSet{
+            patientRoshtaTableView.delegate = self
+            patientRoshtaTableView.dataSource = self
+        }
+    }
+    
+    
+    
+    
     @IBOutlet weak var bottomSheetView: UIView!
-    @IBOutlet weak var doctorImageView: UIImageView!
-    @IBOutlet weak var doctorNameLabel: UILabel!
-    @IBOutlet weak var patientNameLabel: UILabel!
-    @IBOutlet weak var drugNameLabel: UILabel!
-    @IBOutlet weak var drugTypeLabel: UILabel!
-    @IBOutlet weak var drugNotesLabel: UILabel!
-    @IBOutlet weak var drugImageView: UIImageView!
-    @IBOutlet weak var drugIconImageView: UIImageView!
-    @IBOutlet weak var dismissButton: UIButton!
     
     
     
@@ -77,7 +78,6 @@ class RoshtaCodeVerificationViewController: UIViewController{
     @IBOutlet weak var getRoshtaButton: UIButton!
     @IBOutlet weak var changeLanguageButton: UIButton!
     
-    @IBOutlet weak var subView: UIView!
     
     
     
@@ -109,54 +109,46 @@ class RoshtaCodeVerificationViewController: UIViewController{
         
     }
     
-    @IBAction func dismissBottomSheetTapped(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.bottomSheetHeight.constant = 0.001
-            self.bottomSheetView.backgroundColor = MainColors.instance.primaryColor
-            self.patientRoshtaData(isHidden: true)
-            
-            
-        }) { (status) in
-            
-        }
-    }
     
     
     
     @IBAction func getRoshtaTapped(_ sender: Any) {
+        
+//        bottomSheetvisiability()
+                
  
         roshtaID = String("\(firstNumberTextField.text!)\(secondNumberTextField.text!)\(thirdNumberTextField.text!)\(fourthNumberTextField.text!)\(fifthNumberTextField.text!)\(sixthNumberTextField.text!)")
-        
-        
+
+
         if roshtaID?.count == 6{
-            
+
 //            showLoadingView()
             //ShowAlert.showAlert(title: nil, message: "Loading...\n", view: self)
-            
+
             guard let roshtaCode = roshtaID else{
                 return
             }
-                        
+
             roshtaVerificationPresenter?.checkRoshtaCode(id: roshtaCode)
-            
+
             if roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 200{
-                
-                showBottomSheet()
-                
-                
+
+                bottomSheetvisiability()
+
+
             }else{
                 showAlert(title: "ERROR!", message: "\nplease, enter a valid roshta code", view: self)
                 clearTextField()
             }
-            
-                        
-            
+
+
+
         }else{
             showAlert(title: "ERROR!", message: "\nplease, enter a valid roshta code", view: self)
         }
-         
+
     }
-    
+
 
 }
 
@@ -184,31 +176,16 @@ extension RoshtaCodeVerificationViewController: RoshtaVerificationView{
 extension RoshtaCodeVerificationViewController{
     
     
-    func showBottomSheet(){
+    func bottomSheetvisiability(){
         UIView.animate(withDuration: 0.3, animations: {
-            self.bottomSheetHeight.constant = self.view.frame.height * 0.6
+            self.bottomSheetHeight.constant = self.view.frame.height * 0.7
             self.bottomSheetView.backgroundColor = MainColors.instance.primaryColor
-            self.patientRoshtaData(isHidden: false)
+            self.patientRoshtaTableView.isHidden = false
             
             
         }) { (status) in
             
         }
-    }
-    
-    func patientRoshtaData(isHidden: Bool){
-        bottomSheetView.isHidden = isHidden
-        doctorImageView.isHidden = isHidden
-        doctorNameLabel.isHidden = isHidden
-        patientNameLabel.isHidden = isHidden
-        drugNameLabel.isHidden = isHidden
-        drugTypeLabel.isHidden = isHidden
-        drugNotesLabel.isHidden = isHidden
-        drugImageView.isHidden = isHidden
-        drugIconImageView.isHidden = isHidden
-        subView.isHidden = isHidden
-        dismissButton.isHidden = isHidden
-        
     }
     
     
@@ -244,14 +221,14 @@ extension RoshtaCodeVerificationViewController{
         getRoshtaButton.backgroundColor = MainColors.instance.secondaryColor
         getRoshtaButton.tintColor = UIColor.white
         getRoshtaButton.layer.cornerRadius = 20
+//        getRoshtaButton.
         
         bottomSheetView.backgroundColor = .white//MainColors.instance.primaryColor
         bottomSheetView.layer.cornerRadius = 30
         
-        doctorImageView.image = UIImage(named: "image")
-//        doctorImageView.layer.cornerRadius = view.frame.size.height/9
-//        doctorImageView.layer.masksToBounds = true
-//        doctorImageView.clipsToBounds = true
+        
+        
+    
     }
     
     func setTextFieldBorders(){
