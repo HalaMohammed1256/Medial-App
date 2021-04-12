@@ -8,6 +8,7 @@
 import Foundation
 
 
+
 protocol RoshtaVerificationView: class {
     func startAnimating()
     func stopAnimating()
@@ -42,7 +43,7 @@ class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
         self.view = view
     }
     
-    func checkRoshtaCode(id: String) {
+    func checkRoshtaCode(id: String){
         
         view?.startAnimating()
         

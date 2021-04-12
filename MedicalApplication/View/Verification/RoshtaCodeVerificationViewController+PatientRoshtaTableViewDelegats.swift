@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 
@@ -17,15 +18,15 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
         var heightForRow : CGFloat = 0.0
 
         switch indexPath.section {
-        case 0:
-            heightForRow = tableView.frame.height*0.26    // upcoming collection view
-        case 1:
-            heightForRow = tableView.frame.height*0.1    // last table view
+            case 0:
+                heightForRow = tableView.frame.height*0.36
+            case 1:
+                heightForRow = tableView.frame.height*0.1
 
-        case 2:
-            heightForRow = tableView.frame.height*0.5    // team collection view
-        default:
-            heightForRow = 0.0
+            case 2:
+                heightForRow = tableView.frame.height*0.5
+            default:
+                heightForRow = 0.0
         }
 
         return heightForRow
@@ -41,12 +42,10 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
         var heightForHeader : CGFloat = 0.0
 
         switch section {
-        case 0:
-            heightForHeader = view.frame.height*0.05    // upcoming collection view
-        case 1, 2:
-            heightForHeader = view.frame.height*0.03    // last table view & team collection view
-        default:
-            heightForHeader = 0.0
+            case 0, 1, 2:
+                heightForHeader = view.frame.height*0.03
+            default:
+                heightForHeader = 0.0
         }
 
         return heightForHeader
@@ -66,15 +65,15 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
         var titleOfSections = ""
         
         switch section {
-        case 0:
-            titleOfSections = "Doctor Information"    // upcoming collection view
-        case 1:
-            titleOfSections = "Patient Information"    // last table view
-            
-        case 2:
-            titleOfSections = "Roshta"    // team collection view
-        default:
-            titleOfSections = ""
+            case 0:
+                titleOfSections = "Doctor Information"
+            case 1:
+                titleOfSections = "Patient Information"
+                
+            case 2:
+                titleOfSections = "Roshta"    
+            default:
+                titleOfSections = ""
         }
         
         return titleOfSections
@@ -90,20 +89,14 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
                 return UITableViewCell()
             }
             
+//            cell.backgroundColor = UIColor(patternImage: UIImage(named: "capsules")!)
             
-            cell.doctorImageView.image = UIImage(named: "image")
-            cell.doctorNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "default"
-            cell.dismissBottomSheetAction = {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.bottomSheetHeight.constant = 0.001
-                    self.bottomSheetView.backgroundColor = MainColors.instance.primaryColor
-                    self.patientRoshtaTableView.isHidden = true
-                    
-                    
-                }) { (status) in
-                    
-                }
-            }
+            cell.doctorImageView.sd_setImage(with: URL(string: roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
+            
+            cell.doctorImageView.layer.cornerRadius = cell.doctorImageView.frame.height/2
+            cell.doctorImageView.clipsToBounds = true
+            
+            cell.doctorNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor"
             
             
             return cell
@@ -116,7 +109,7 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
             }
             
             
-            cell.patientNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.patient_name
+            cell.patientNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.patient_name ?? "Patient"
             
             return cell
       
@@ -126,7 +119,7 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
                 return UITableViewCell()
             }
             
-//            cell.RoshtaDetailsArray = (roshtaVerificationPresenter!.pharmacyPatientData?.Details?.rosheta)!
+            cell.roshtaDetailsArray = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.rosheta
 
             return cell
             

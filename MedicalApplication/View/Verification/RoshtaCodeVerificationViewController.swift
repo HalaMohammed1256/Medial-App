@@ -35,6 +35,7 @@ class RoshtaCodeVerificationViewController: UIViewController{
     
     
     
+    
     @IBOutlet weak var bottomSheetView: UIView!
     
     
@@ -110,20 +111,21 @@ class RoshtaCodeVerificationViewController: UIViewController{
     }
     
     
+    @IBAction func dismiss(_ sender: Any) {
+        bottomSheetvisiability(isHidden: true)
+    }
+    
+//    func fetchArticle(from url: String) async throws -> String
+    
+//    func fetchPharmacyPatientData(
     
     
     @IBAction func getRoshtaTapped(_ sender: Any) {
-        
-//        bottomSheetvisiability()
-                
- 
+         
         roshtaID = String("\(firstNumberTextField.text!)\(secondNumberTextField.text!)\(thirdNumberTextField.text!)\(fourthNumberTextField.text!)\(fifthNumberTextField.text!)\(sixthNumberTextField.text!)")
 
 
         if roshtaID?.count == 6{
-
-//            showLoadingView()
-            //ShowAlert.showAlert(title: nil, message: "Loading...\n", view: self)
 
             guard let roshtaCode = roshtaID else{
                 return
@@ -133,7 +135,8 @@ class RoshtaCodeVerificationViewController: UIViewController{
 
             if roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 200{
 
-                bottomSheetvisiability()
+                
+                bottomSheetvisiability(isHidden: false)
 
 
             }else{
@@ -176,12 +179,12 @@ extension RoshtaCodeVerificationViewController: RoshtaVerificationView{
 extension RoshtaCodeVerificationViewController{
     
     
-    func bottomSheetvisiability(){
+    func bottomSheetvisiability(isHidden: Bool){
         UIView.animate(withDuration: 0.3, animations: {
-            self.bottomSheetHeight.constant = self.view.frame.height * 0.7
-            self.bottomSheetView.backgroundColor = MainColors.instance.primaryColor
-            self.patientRoshtaTableView.isHidden = false
-            
+//            self.bottomSheetHeight.constant = self.view.frame.height * 0.7
+//            self.bottomSheetView.backgroundColor = MainColors.instance.secondaryColor
+            self.bottomSheetView.isHidden = isHidden
+            self.patientRoshtaTableView.isHidden = isHidden
             
         }) { (status) in
             
@@ -217,11 +220,10 @@ extension RoshtaCodeVerificationViewController{
     }
     
     func configureOutlet(){
-        changeLanguageButton.tintColor = MainColors.instance.secondaryColor
-        getRoshtaButton.backgroundColor = MainColors.instance.secondaryColor
+        changeLanguageButton.tintColor = MainColors.instance.primaryColor
+        getRoshtaButton.backgroundColor = MainColors.instance.primaryColor
         getRoshtaButton.tintColor = UIColor.white
         getRoshtaButton.layer.cornerRadius = 20
-//        getRoshtaButton.
         
         bottomSheetView.backgroundColor = .white//MainColors.instance.primaryColor
         bottomSheetView.layer.cornerRadius = 30

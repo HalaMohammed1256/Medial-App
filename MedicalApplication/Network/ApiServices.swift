@@ -20,7 +20,6 @@ class ApiServices{
     
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON{(response) in
             
-            print(Alamofire.URL.self)
             
             switch response.result{
                 case .success( _):

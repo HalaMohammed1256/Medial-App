@@ -16,7 +16,7 @@ class ActivityIndicator {
     
     init(view:UIView) {
         self.view = view
-        activityIndicator = NVActivityIndicatorView(frame: .zero, type: .ballPulse, color: MainColors.instance.secondaryColor, padding: 0)
+        activityIndicator = NVActivityIndicatorView(frame: .zero, type: .ballPulse, color: MainColors.instance.primaryColor, padding: 0)
     }
     fileprivate func buildIndicator() {
         activityIndicator?.translatesAutoresizingMaskIntoConstraints = false

@@ -12,7 +12,6 @@ class DoctorDataTableViewCell: UITableViewCell {
     
     @IBOutlet weak var doctorImageView: UIImageView!
     @IBOutlet weak var doctorNameLabel: UILabel!
-    @IBOutlet weak var dismissButton: UIButton!
     
     
     var dismissBottomSheetAction: (() -> Void)?
@@ -29,9 +28,7 @@ class DoctorDataTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func dismissBottomSheetTapped(_ sender: Any) {
-        dismissBottomSheetAction?()
-    }
+
     
     
     
