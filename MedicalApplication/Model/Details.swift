@@ -16,3 +16,4 @@ struct Details : Codable {
     let record_info_id : String?
     let rosheta : [Rosheta]?
 }
+

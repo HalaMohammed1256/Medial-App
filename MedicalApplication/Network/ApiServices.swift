@@ -13,10 +13,12 @@ class ApiServices{
     
     static let instance = ApiServices()
     
-    func getResponses<T: Decodable>(url: String, id: String, completion: @escaping(T?, Error?)-> Void){
+    func getResponses<T: Decodable>(url: String, id: String = "", completion: @escaping(T?, Error?)-> Void){
         
         let parameters: Parameters = ["id": Int(id) ?? ""]
-        Alamofire.request(url, method: .get,parameters: parameters, encoding: URLEncoding.default).responseJSON{(response) in
+        let headers = ["content-type": "application/json"]
+    
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON{(response) in
             
             switch response.result{
                 case .success( _):
@@ -30,21 +32,21 @@ class ApiServices{
                         let data = try decoder.decode(T.self, from: responseData)
                         completion(data,nil)
                         
+                        print(url+id)
                         
                     }catch{
                         completion(nil,error)
                     }
-                    
+
                 case .failure(let error):
                     completion(nil,error)
             }
-            
+
             
         }
         
     }
     
 }
-
 
 

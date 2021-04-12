@@ -35,6 +35,7 @@ class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
             }
         }
     }
+    
     weak var view: RoshtaVerificationView?
     
     required init(view: RoshtaVerificationView) {
@@ -52,6 +53,9 @@ class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
             }
             
             self.pharmacyPatientData = data
+            
+           print(id)
+            
             
             
         }

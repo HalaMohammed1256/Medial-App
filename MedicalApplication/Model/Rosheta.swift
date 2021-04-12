@@ -16,3 +16,4 @@ struct Rosheta : Codable {
     let notes : String?
     let product : Product?
 }
+
