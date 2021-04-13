@@ -22,6 +22,7 @@ class RoshtaCodeVerificationViewController: UIViewController{
     
     // constraints outlet
     @IBOutlet weak var bottomSheetHeight: NSLayoutConstraint!
+    @IBOutlet weak var enterRostaCodeTop: NSLayoutConstraint!
     
     
     // outlets
@@ -32,6 +33,10 @@ class RoshtaCodeVerificationViewController: UIViewController{
         }
     }
     
+    
+    
+    @IBOutlet weak var doctorImageView: UIImageView!
+    @IBOutlet weak var doctorNameLabel: UILabel!
     
     
     
@@ -121,6 +126,7 @@ class RoshtaCodeVerificationViewController: UIViewController{
     
     
     @IBAction func getRoshtaTapped(_ sender: Any) {
+        
          
         roshtaID = String("\(firstNumberTextField.text!)\(secondNumberTextField.text!)\(thirdNumberTextField.text!)\(fourthNumberTextField.text!)\(fifthNumberTextField.text!)\(sixthNumberTextField.text!)")
 
@@ -131,23 +137,25 @@ class RoshtaCodeVerificationViewController: UIViewController{
                 return
             }
 
-            roshtaVerificationPresenter?.checkRoshtaCode(id: roshtaCode)
+            roshtaVerificationPresenter?.checkRoshtaCode(id: roshtaCode, isLoadingCompletion:{ isFinish in
+                if isFinish && self.roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 200{
 
-            if roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 200{
+                    
+                    self.doctorNameLabel.text =  "Dr: \(self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor")"
+                    self.doctorImageView.sd_setImage(with: URL(string: self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
+                    
+                    self.bottomSheetvisiability(isHidden: false)
+                    self.clearTextField()
 
-                
-                bottomSheetvisiability(isHidden: false)
+                }
+//                if self.roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 403{
+//                    self.showAlert(title: "ERROR!", message: "\n\(self.roshtaVerificationPresenter?.pharmacyPatientData?.message ?? "please, enter a valid roshta code")", view: self)
+//                }
+            })
 
 
-            }else{
-                showAlert(title: "ERROR!", message: "\nplease, enter a valid roshta code", view: self)
-                clearTextField()
-            }
-
-
-
-        }else{
-            showAlert(title: "ERROR!", message: "\nplease, enter a valid roshta code", view: self)
+        }else {
+            showAlert(title: "ERROR!", message: "\nRoshta code must be 6 digit numbers", view: self)
         }
 
     }
@@ -157,6 +165,14 @@ class RoshtaCodeVerificationViewController: UIViewController{
 
 
 extension RoshtaCodeVerificationViewController: RoshtaVerificationView{
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.patientRoshtaTableView.reloadData()
+            
+        }
+    }
+    
     
     func startAnimating() {
         DispatchQueue.main.async {
@@ -174,6 +190,14 @@ extension RoshtaCodeVerificationViewController: RoshtaVerificationView{
     
     
 }
+/*
+ 
+ doctorImageView.sd_setImage(with: URL(string: roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
+ 
+ 
+ cell.doctorNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor"
+ 
+ */
 
 
 extension RoshtaCodeVerificationViewController{
@@ -225,9 +249,14 @@ extension RoshtaCodeVerificationViewController{
         getRoshtaButton.tintColor = UIColor.white
         getRoshtaButton.layer.cornerRadius = 20
         
-        bottomSheetView.backgroundColor = .white//MainColors.instance.primaryColor
+//        bottomSheetView.layer.borderColor = MainColors.instance.secondaryColor.cgColor
+//        bottomSheetView.layer.borderWidth = 2
         bottomSheetView.layer.cornerRadius = 30
         
+        doctorImageView.layer.cornerRadius = doctorImageView.frame.height/2
+        doctorImageView.clipsToBounds = true
+        
+        enterRostaCodeTop.constant = view.frame.height * 0.087
         
         
     

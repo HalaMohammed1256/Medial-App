@@ -12,30 +12,25 @@ import Foundation
 protocol RoshtaVerificationView: class {
     func startAnimating()
     func stopAnimating()
+    func reloadTableView()
 }
 
 protocol RoshtaVerificationViewPresenter {
     init(view: RoshtaVerificationView)
     var pharmacyPatientData: PharmacyPatientData? { get set }
-    var statusCode: Int?{get set}
-    func checkRoshtaCode(id: String)
+    func checkRoshtaCode(id: String, isLoadingCompletion : @escaping (Bool)->Void)
 }
 
 
 class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
     
-    var statusCode: Int?
     
-    var pharmacyPatientData: PharmacyPatientData?{
-        didSet{
-            if pharmacyPatientData?.status_code == 200{
-                view?.stopAnimating()
-            }else{
-                statusCode = (pharmacyPatientData?.status_code)!
-                view?.stopAnimating()
-            }
-        }
-    }
+    var pharmacyPatientData: PharmacyPatientData?
+//    {
+//        didSet{
+//            view?.stopAnimating()
+//        }
+//    }
     
     weak var view: RoshtaVerificationView?
     
@@ -43,10 +38,9 @@ class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
         self.view = view
     }
     
-    func checkRoshtaCode(id: String){
-        
+    func checkRoshtaCode(id: String, isLoadingCompletion : @escaping (Bool)->Void){
         view?.startAnimating()
-        
+        isLoadingCompletion(false)
         ApiServices.instance.getResponses(url: ApiUrls.PharmacyPatient.rawValue, id: id) {(data: PharmacyPatientData?, error) in
             
             guard let data = data, error == nil else{
@@ -54,8 +48,12 @@ class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
             }
             
             self.pharmacyPatientData = data
-            
-           print(id)
+            if self.pharmacyPatientData?.status_code == 200{
+                isLoadingCompletion(true)
+                self.view?.reloadTableView()
+            }
+
+            self.view?.stopAnimating()
             
             
             

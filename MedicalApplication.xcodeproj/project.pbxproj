@@ -15,7 +15,6 @@
 		2B08181D2621C48800DC2C65 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08181C2621C48800DC2C65 /* ApiServices.swift */; };
 		2B51D4C12623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51D4C02623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift */; };
 		2B92DAF5262365A500AC1A91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B92DAF7262365A500AC1A91 /* Localizable.strings */; };
-		2B9C96B9262471D4005945A6 /* DoctorDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C96B8262471D4005945A6 /* DoctorDataTableViewCell.swift */; };
 		2B9C96BC262471ED005945A6 /* PatientDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C96BB262471ED005945A6 /* PatientDataTableViewCell.swift */; };
 		2B9C96BF262471FF005945A6 /* RoshtaDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C96BE262471FF005945A6 /* RoshtaDataTableViewCell.swift */; };
 		2B9C96C22624735C005945A6 /* RoshtaCodeVerificationViewController+PatientRoshtaTableViewDelegats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C96C12624735C005945A6 /* RoshtaCodeVerificationViewController+PatientRoshtaTableViewDelegats.swift */; };
@@ -47,7 +46,6 @@
 		2B92DAF6262365A500AC1A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B92DAF9262365C800AC1A91 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Main.strings"; sourceTree = "<group>"; };
 		2B92DAFA262365C800AC1A91 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		2B9C96B8262471D4005945A6 /* DoctorDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDataTableViewCell.swift; sourceTree = "<group>"; };
 		2B9C96BB262471ED005945A6 /* PatientDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDataTableViewCell.swift; sourceTree = "<group>"; };
 		2B9C96BE262471FF005945A6 /* RoshtaDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshtaDataTableViewCell.swift; sourceTree = "<group>"; };
 		2B9C96C12624735C005945A6 /* RoshtaCodeVerificationViewController+PatientRoshtaTableViewDelegats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoshtaCodeVerificationViewController+PatientRoshtaTableViewDelegats.swift"; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				2B9C96C4262477A5005945A6 /* Roshta */,
-				2B9C96B8262471D4005945A6 /* DoctorDataTableViewCell.swift */,
 				2B9C96BB262471ED005945A6 /* PatientDataTableViewCell.swift */,
 				2B9C96C62624785F005945A6 /* RoshtaTableDataTableViewCell.swift */,
 			);
@@ -372,7 +369,6 @@
 				2B9D9DF62621CB5600272CEA /* Products.swift in Sources */,
 				2B9C96BC262471ED005945A6 /* PatientDataTableViewCell.swift in Sources */,
 				2B9D9E0B2621D64600272CEA /* MainColors.swift in Sources */,
-				2B9C96B9262471D4005945A6 /* DoctorDataTableViewCell.swift in Sources */,
 				2B9D9DF32621CAFA00272CEA /* Details.swift in Sources */,
 				2B0818022621BC4A00DC2C65 /* SceneDelegate.swift in Sources */,
 			);

@@ -57,6 +57,8 @@ extension RoshtaTableDataTableViewCell: UITableViewDelegate, UITableViewDataSour
         
         cell.drugImageView.sd_setImage(with: URL(string: roshtaDetailsArray?[indexPath.row].product?.mainImageUrl ?? ""), placeholderImage: UIImage(named: "medicine"))
         
+        cell.drugImageView.layer.cornerRadius = 10
+        
         cell.drugIconImageView.sd_setImage(with: URL(string: roshtaDetailsArray?[indexPath.row].product?.productShapeIconUrl ?? ""), placeholderImage: UIImage(named: "medicine"))
         
         cell.drugNameLabel.text = roshtaDetailsArray?[indexPath.row].product?.productNameEn ?? "drug name...."
