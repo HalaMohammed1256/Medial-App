@@ -48,10 +48,10 @@ class RoshtaVerificationPresenter: RoshtaVerificationViewPresenter {
             }
             
             self.pharmacyPatientData = data
-            if self.pharmacyPatientData?.status_code == 200{
+//            if self.pharmacyPatientData?.status_code == 200{
                 isLoadingCompletion(true)
                 self.view?.reloadTableView()
-            }
+//            }
 
             self.view?.stopAnimating()
             

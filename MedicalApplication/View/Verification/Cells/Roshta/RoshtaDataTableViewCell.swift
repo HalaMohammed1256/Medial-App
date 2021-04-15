@@ -10,10 +10,8 @@ import UIKit
 class RoshtaDataTableViewCell: UITableViewCell {
     
     @IBOutlet weak var drugNameLabel: UILabel!
-    @IBOutlet weak var drugTypeLabel: UILabel!
     @IBOutlet weak var drugNotesLabel: UILabel!
     @IBOutlet weak var drugImageView: UIImageView!
-    @IBOutlet weak var drugIconImageView: UIImageView!
     
 
     override func awakeFromNib() {

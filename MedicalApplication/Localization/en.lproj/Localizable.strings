@@ -1,3 +1,10 @@
 
 
-
+"AlertTitle"="Error!";
+"AlertMessage"="Roshta code must be 6 digit numbers";
+"AlertOKButton"="OK";
+"RoshtaCodeNotFound"="not found  history";
+"PatientInformation"="Patient Information";
+"Dr\\"="Dr\\";
+"Roshta" = "Roshta";
+"productName" = "en";

@@ -7,7 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-//import MOLH
+import MOLH
 
 class RoshtaCodeVerificationViewController: UIViewController{
     
@@ -21,7 +21,6 @@ class RoshtaCodeVerificationViewController: UIViewController{
     
     
     // constraints outlet
-    @IBOutlet weak var bottomSheetHeight: NSLayoutConstraint!
     @IBOutlet weak var enterRostaCodeTop: NSLayoutConstraint!
     
     
@@ -37,6 +36,7 @@ class RoshtaCodeVerificationViewController: UIViewController{
     
     @IBOutlet weak var doctorImageView: UIImageView!
     @IBOutlet weak var doctorNameLabel: UILabel!
+    @IBOutlet weak var doctorSpecializationLabel: UILabel!
     
     
     
@@ -98,20 +98,22 @@ class RoshtaCodeVerificationViewController: UIViewController{
         roshtaVerificationPresenter = RoshtaVerificationPresenter.init(view: self)
         
         indicator = ActivityIndicator(view: self.view)
-        
-        
-        
+
     }
     
     
     
     // Actions
     @IBAction func changeLanguageTapped(_ sender: Any) {
-        
 
+        if  MOLHLanguage.currentAppleLanguage()  == "en"{
+            MOLH.setLanguageTo("ar")
+        }else{
+            MOLH.setLanguageTo("en")
+        }
         
-//        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
-//        MOLH.reset()
+        MOLH.reset()
+   
         
     }
     
@@ -120,9 +122,6 @@ class RoshtaCodeVerificationViewController: UIViewController{
         bottomSheetvisiability(isHidden: true)
     }
     
-//    func fetchArticle(from url: String) async throws -> String
-    
-//    func fetchPharmacyPatientData(
     
     
     @IBAction func getRoshtaTapped(_ sender: Any) {
@@ -137,25 +136,11 @@ class RoshtaCodeVerificationViewController: UIViewController{
                 return
             }
 
-            roshtaVerificationPresenter?.checkRoshtaCode(id: roshtaCode, isLoadingCompletion:{ isFinish in
-                if isFinish && self.roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 200{
-
-                    
-                    self.doctorNameLabel.text =  "Dr: \(self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor")"
-                    self.doctorImageView.sd_setImage(with: URL(string: self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
-                    
-                    self.bottomSheetvisiability(isHidden: false)
-                    self.clearTextField()
-
-                }
-//                if self.roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 403{
-//                    self.showAlert(title: "ERROR!", message: "\n\(self.roshtaVerificationPresenter?.pharmacyPatientData?.message ?? "please, enter a valid roshta code")", view: self)
-//                }
-            })
+            checkRoshtaVerificationCode(roshtaCode: roshtaCode)
 
 
         }else {
-            showAlert(title: "ERROR!", message: "\nRoshta code must be 6 digit numbers", view: self)
+            showAlert(title: "AlertTitle".localized(), message: "\n\("AlertMessage".localized())", view: self)
         }
 
     }
@@ -190,23 +175,12 @@ extension RoshtaCodeVerificationViewController: RoshtaVerificationView{
     
     
 }
-/*
- 
- doctorImageView.sd_setImage(with: URL(string: roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
- 
- 
- cell.doctorNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor"
- 
- */
-
 
 extension RoshtaCodeVerificationViewController{
     
     
     func bottomSheetvisiability(isHidden: Bool){
         UIView.animate(withDuration: 0.3, animations: {
-//            self.bottomSheetHeight.constant = self.view.frame.height * 0.7
-//            self.bottomSheetView.backgroundColor = MainColors.instance.secondaryColor
             self.bottomSheetView.isHidden = isHidden
             self.patientRoshtaTableView.isHidden = isHidden
             
@@ -216,10 +190,42 @@ extension RoshtaCodeVerificationViewController{
     }
     
     
+    func checkRoshtaVerificationCode(roshtaCode: String){
+                
+        roshtaVerificationPresenter?.checkRoshtaCode(id: roshtaCode, isLoadingCompletion:{ isFinish in
+            if isFinish{
+
+                if self.roshtaVerificationPresenter?.pharmacyPatientData?.status_code == 200{
+                                        
+                    self.doctorSpecializationLabel.text = self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor Specialization...."
+                    
+                    self.doctorNameLabel.text =  "\("Dr\\".localized()) \(self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor Name....")"
+                    
+                    self.doctorImageView.sd_setImage(with: URL(string: self.roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
+                    
+                    self.bottomSheetvisiability(isHidden: false)
+                    self.clearTextField()
+
+                }else{
+                    self.showAlert(title: "AlertTitle".localized(), message: "\n\("RoshtaCodeNotFound".localized())", view: self)
+                    
+                    
+//                    self.showAlert(title: "AlertTitle".localized(), message: "\n\(self.roshtaVerificationPresenter?.pharmacyPatientData?.message ?? "please, enter a valid roshta code")", view: self)
+                }
+            }
+        })
+        
+    }
+    
+    
+    
+    
+    
+    
     func showAlert(title: String?, message: String, view: UIViewController){
                 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+        alert.addAction(UIAlertAction(title: "AlertOKButton".localized(), style: .default, handler: { (UIAlertAction) in
             self.clearTextField()
         }))
         view.present(alert, animated: true)
@@ -249,8 +255,6 @@ extension RoshtaCodeVerificationViewController{
         getRoshtaButton.tintColor = UIColor.white
         getRoshtaButton.layer.cornerRadius = 20
         
-//        bottomSheetView.layer.borderColor = MainColors.instance.secondaryColor.cgColor
-//        bottomSheetView.layer.borderWidth = 2
         bottomSheetView.layer.cornerRadius = 30
         
         doctorImageView.layer.cornerRadius = doctorImageView.frame.height/2

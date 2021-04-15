@@ -9,6 +9,11 @@ import UIKit
 
 class RoshtaTableDataTableViewCell: UITableViewCell {
     
+    var productName : [String : String] = [
+        "ar":"",
+        "en":""
+    ]
+    
     
     @IBOutlet weak var roshtaTableView: UITableView!{
         didSet{
@@ -55,18 +60,16 @@ extension RoshtaTableDataTableViewCell: UITableViewDelegate, UITableViewDataSour
         cell.layer.cornerRadius = 20
 //        cell.backgroundColor = MainColors.instance.secondaryColor
         
-        cell.drugImageView.sd_setImage(with: URL(string: roshtaDetailsArray?[indexPath.row].product?.mainImageUrl ?? ""), placeholderImage: UIImage(named: "medicine"))
+        cell.drugImageView.sd_setImage(with: URL(string: roshtaDetailsArray?[indexPath.row].product?.mainImageUrl ?? ""), placeholderImage: UIImage(named: "medicine....."))
         
         cell.drugImageView.layer.cornerRadius = 10
         
-        cell.drugIconImageView.sd_setImage(with: URL(string: roshtaDetailsArray?[indexPath.row].product?.productShapeIconUrl ?? ""), placeholderImage: UIImage(named: "medicine"))
+        productName.updateValue(roshtaDetailsArray?[indexPath.row].product?.productNameEn ?? "drug name....", forKey: "en")
+        productName.updateValue(roshtaDetailsArray?[indexPath.row].product?.productNameAr ?? "اسم الدواء....", forKey: "ar")
         
-        cell.drugNameLabel.text = roshtaDetailsArray?[indexPath.row].product?.productNameEn ?? "drug name...."
+        
+        cell.drugNameLabel.text = "productName".localized() == "en" ? productName["en"] : productName["ar"]
         cell.drugNotesLabel.text = roshtaDetailsArray?[indexPath.row].notes ?? "drug notes...."
-        
-        let split = ((roshtaDetailsArray?[indexPath.row].product?.productNameEn) ?? "drug type....").split(separator: " ")
-        cell.drugTypeLabel.text = String(split.suffix(1).joined(separator: [" "]))
-        
         
         
         

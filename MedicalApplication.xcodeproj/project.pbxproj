@@ -44,8 +44,6 @@
 		2B08181C2621C48800DC2C65 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		2B51D4C02623A7E600302544 /* RoshtaCodeVerificationViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoshtaCodeVerificationViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		2B92DAF6262365A500AC1A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2B92DAF9262365C800AC1A91 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Main.strings"; sourceTree = "<group>"; };
-		2B92DAFA262365C800AC1A91 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2B9C96BB262471ED005945A6 /* PatientDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDataTableViewCell.swift; sourceTree = "<group>"; };
 		2B9C96BE262471FF005945A6 /* RoshtaDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshtaDataTableViewCell.swift; sourceTree = "<group>"; };
 		2B9C96C12624735C005945A6 /* RoshtaCodeVerificationViewController+PatientRoshtaTableViewDelegats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoshtaCodeVerificationViewController+PatientRoshtaTableViewDelegats.swift"; sourceTree = "<group>"; };
@@ -59,6 +57,9 @@
 		2B9D9E052621D0F200272CEA /* ApiURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURLs.swift; sourceTree = "<group>"; };
 		2B9D9E0A2621D64600272CEA /* MainColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColors.swift; sourceTree = "<group>"; };
 		2B9D9E0D2621EEB200272CEA /* UIElementExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementExtentions.swift; sourceTree = "<group>"; };
+		2BC7E28426270FA600B8FBE7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		2BC7E28526270FA700B8FBE7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2BC7E28626270FA700B8FBE7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2BCABAF926230DE100191747 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		95F3379D552450075AA016C4 /* Pods-MedicalApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalApplication.release.xcconfig"; path = "Target Support Files/Pods-MedicalApplication/Pods-MedicalApplication.release.xcconfig"; sourceTree = "<group>"; };
 		BB5484FDAA82C7C9E7606896 /* Pods-MedicalApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalApplication.debug.xcconfig"; path = "Target Support Files/Pods-MedicalApplication/Pods-MedicalApplication.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,7 +281,7 @@
 			knownRegions = (
 				en,
 				Base,
-				"ar-EG",
+				ar,
 			);
 			mainGroup = 2B0817F32621BC4A00DC2C65;
 			productRefGroup = 2B0817FD2621BC4A00DC2C65 /* Products */;
@@ -381,7 +382,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B0818062621BC4A00DC2C65 /* Base */,
-				2B92DAF9262365C800AC1A91 /* ar-EG */,
+				2BC7E28426270FA600B8FBE7 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -390,6 +391,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B08180B2621BC4B00DC2C65 /* Base */,
+				2BC7E28526270FA700B8FBE7 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -398,7 +400,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B92DAF6262365A500AC1A91 /* en */,
-				2B92DAFA262365C800AC1A91 /* ar-EG */,
+				2BC7E28626270FA700B8FBE7 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -532,6 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MedicalApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -551,6 +554,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MedicalApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

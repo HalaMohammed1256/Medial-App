@@ -11,6 +11,6 @@ target 'MedicalApplication' do
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'
   pod 'SDWebImage', '~> 5.0'
-  
+  pod 'MOLH'
 
 end

@@ -13,13 +13,12 @@ import SDWebImage
 extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableViewDataSource{
     
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         var heightForRow : CGFloat = 0.0
 
         switch indexPath.section {
-//            case 0:
-//                heightForRow = tableView.frame.height*0.36
             case 0:
                 heightForRow = tableView.frame.height*0.1
 
@@ -66,9 +65,9 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
         
         switch section {
             case 0:
-                titleOfSections = "Patient Information"
+                titleOfSections = "PatientInformation".localized()
             case 1:
-                titleOfSections = "Roshta"
+                titleOfSections = "Roshta".localized()
                  
             default:
                 titleOfSections = ""
@@ -81,25 +80,7 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
-//        case 0:
-//
-//            guard let cell = patientRoshtaTableView.dequeueReusableCell(withIdentifier: String(describing: DoctorDataTableViewCell.self), for: indexPath)  as? DoctorDataTableViewCell else {
-//                return UITableViewCell()
-//            }
-//
-////            cell.backgroundColor = UIColor(patternImage: UIImage(named: "capsules")!)
-//
-//            cell.doctorImageView.sd_setImage(with: URL(string: roshtaVerificationPresenter!.pharmacyPatientData?.Details?.image_doctor ?? ""), placeholderImage: UIImage(named: "doctor"))
-//
-//            cell.doctorImageView.layer.cornerRadius = cell.doctorImageView.frame.height/2
-//            cell.doctorImageView.clipsToBounds = true
-//
-//            cell.doctorNameLabel.text = roshtaVerificationPresenter!.pharmacyPatientData?.Details?.doctorName ?? "Doctor"
-//
-//
-//            return cell
-//
-//
+
         case 0:
             
             guard let cell = patientRoshtaTableView.dequeueReusableCell(withIdentifier: String(describing: PatientDataTableViewCell.self), for: indexPath)  as? PatientDataTableViewCell else {
@@ -132,8 +113,3 @@ extension RoshtaCodeVerificationViewController: UITableViewDelegate, UITableView
 }
 
 
-/*
- 
- 
- 
- */

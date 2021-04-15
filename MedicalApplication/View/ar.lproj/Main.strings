@@ -1,0 +1,35 @@
+
+/* Class = "UILabel"; text = "Roshta"; ObjectID = "AVF-Ff-yQ4"; */
+"AVF-Ff-yQ4.text" = "روشته";
+
+
+/* Class = "UIButton"; normalTitle = "Get Roshta"; ObjectID = "FnY-cp-xg5"; */
+"FnY-cp-xg5.normalTitle" = "احصل على روشتتك";
+
+/* Class = "UIButton"; normalTitle = "dismiss"; ObjectID = "ei1-Sj-T7Y"; */
+"ei1-Sj-T7Y.normalTitle" = "الغاء";
+
+/* Class = "UILabel"; text = "Enter your Roshta code"; ObjectID = "fVp-mN-d5L"; */
+"fVp-mN-d5L.text" = "ادخل كود الروشته الخاص بك";
+
+/* Class = "UIButton"; normalTitle = "Arabic"; ObjectID = "qjf-6r-zSX"; */
+"qjf-6r-zSX.normalTitle" = "English";
+
+
+/* Class = "UILabel"; text = "Ahmed Mohammed"; ObjectID = "vRX-fK-OqT"; */
+/*"vRX-fK-OqT.text" = "Ahmed Mohammed";
+
+/* Class = "UILabel"; text = "Dr: Mohammed Ahmed"; ObjectID = "EWK-Rs-LhE"; */
+/*"EWK-Rs-LhE.text" = "Dr: Mohammed Ahmed";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "Fvl-Bn-tNA"; */
+/*"Fvl-Bn-tNA.text" = "Language";
+
+/* Class = "UILabel"; text = "productNameEn"; ObjectID = "Gu7-5y-1UR"; */
+/*"Gu7-5y-1UR.text" = "productNameEn";
+
+/* Class = "UILabel"; text = "notes"; ObjectID = "RbK-JL-461"; */
+/*"RbK-JL-461.text" = "notes";
+
+/* Class = "UILabel"; text = "Pharmacist"; ObjectID = "qAK-Ah-aLO"; */
+/*"qAK-Ah-aLO.text" = "Pharmacist";

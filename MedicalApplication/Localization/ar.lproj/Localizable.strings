@@ -1,0 +1,12 @@
+
+
+
+
+"AlertTitle"="خطأ!";
+"AlertMessage"="يجب ان يتكون كود الروشته من ٦ ارقام";
+"AlertOKButton"="موافق";
+"RoshtaCodeNotFound"="عفوا هذا الكود غير صحيح";
+"PatientInformation"="معلومات المريض";
+"Dr\\"="د/";
+"Roshta" = "روشته";
+"productName" = "ar";
